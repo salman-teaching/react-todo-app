@@ -18,6 +18,32 @@ function App() {
     setTodos(newArr);
   }
 
+  function deleteTodo(id) {
+    // logic --> to delete todo
+
+    const filteredArray = todos.filter((todo) => {
+      if (todo.id === id) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+
+    setTodos(filteredArray);
+  }
+
+  function toggleTodo(id) {
+    let newUpdatedArray = todos.map((todo) => {
+      if (todo.id === id) {
+        todo.isCompleted = true;
+      }
+
+      return todo;
+    });
+
+    setTodos(newUpdatedArray);
+  }
+
   return (
     <div>
       <h1>Todo tracker app</h1>
@@ -37,6 +63,10 @@ function App() {
             <div key={todo.id}>
               <p>{todo.todoTitle}</p>
               {todo.isCompleted ? <p>Completed</p> : <p>Incomplete</p>}
+              <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+              <button onClick={() => toggleTodo(todo.id)}>
+                Mark as complete
+              </button>
             </div>
           );
         })}

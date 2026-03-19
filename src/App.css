@@ -34,15 +34,14 @@ h1 {
 
 .todos-wrapper {
   display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   grid-auto-rows: 100px;
   margin: 50px;
 }
 
 .todos-wrapper div {
-  border: 1px solid blue;
+  border: 1px solid rgb(110, 110, 255);
   padding: 10px;
   border-radius: 10px;
 }
